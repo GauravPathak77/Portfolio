@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/848f303d41.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="navbar wave" id="myNavbar">
+      <a href="#home" class="logo"
+        ><img src="your-logo.png" alt="Logo" height="40"
+      /></a>
+      <div class="nav-links">
+        <a href=""></a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </section>
+
+    <!-- hero section start -->
+    <section class="hero">
+      <div class="content">
+        <h1>Welcome to my Website</h1>
+        <p id="value">
+        </p>
+        <a href="#" class="button">Resume</a>
+      </div>
+      <div class="image">
+        <img src="your-image.jpg" alt="Image" />
+      </div>
+    </section>
+    <!-- hero section end -->
+
+    <!-- About section start -->
+    <section class="about">
+      <h2>About Us</h2>
+      <div class="content">
+        <div class="image">
+          <img src="your-image.jpg" alt="Image" />
+        </div>
+        <p>
+          Passionate developer with expertise in web and app development using React.js, Node.js, and React Native. Strong problem-solving skills with a background in Data Structures and Algorithms (DSA). Eager to collaborate and build innovative solutions. Let's connect and create something great together!
+        </p>
+        <a href="#main" class="button">More</a>
+      </div>
+    </section>
+    <!-- About section end -->
+    <!-- Timeline start -->
+    <section id="main" class="main">
+      <h3 class="heading">Timeline</h3>
+      <div class="container">
+        <ul>
+          <li>
+      <h3 class="title">C++ Journey: Unleashing Programming</h3>
+      <span>
+        After HSSC (High School), I began my programming journey with C++. I quickly fell in love with its versatility and powerful capabilities.
+      </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">April 2019</span>
+      <div class="read-more-content">
+        <span>As I progressed my journey, I learned fundamental topics of C++ including file handling, as well as the basics of stack, linked list, and queue data structures.
+          To apply my knowledge, I took a project named "AgentRecordPro," where I used C++ to manage agent records using binary file handling. This project showcased my skills in file I/O, data serialization, and efficient data storage.
+          Check out my GitHub repository for the AgentRecordPro project and more!
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+    </li>
+          <li>
+            <h3 class="title">C Programming</h3>
+            <span>
+              During my first year of college, I studied the C programming language, and it was a good experience. Learning C gave me a strong foundation, 
+            </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">November 2021</span>
+      <div class="read-more-content">
+        <span>Now I'm excited to explore more and take on new challenges in this exciting journey.
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+          </li>
+          <li>
+            <h3 class="title">Front-end Development</h3>
+            <span>
+              I started front-end web development with HTML and CSS to create static websites with responsive and visually appealing designs.
+            </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">May 2022</span>
+      <div class="read-more-content">
+        <span>Then, I dived into JavaScript, where I learned to make web pages interactive, handle events, and use asynchronous programming for smoother user experiences. Through this, I gained a good understanding of client-side scripting.
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+          </li>
+          <li>
+            <h3 class="title">DSA With Java</h3>
+            <span>
+              I began my Java journey by learning its fundamentals, including the concepts of Object-Oriented Programming.
+            </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">Septemper 2022</span>
+      <div class="read-more-content">
+        <span>After that, I started Data Structures and Algorithms (DSA), covered various topics like Sorting, Searching, Arrays, Backtracking, Stack, LinkedList, Queue, HashMap, Trees, Tries, Graphs, Dynamic programming and other topics of DSA in around one year. To practice and improve, I started solving coding challenges on platforms like LeetCode.
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+        </li>
+        <li>
+            <h3 class="title">Back-end Development</h3>
+            <span>
+              I learned server-side programming using Node.js and Express.js, where I built RESTful APIs and understood how to handle routing, middleware, and server deployment
+            </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">Septemper 2022</span>
+      <div class="read-more-content">
+        <span>Additionally, I integrated EJS (Embedded JavaScript templates) into my Express.js projects to create dynamic content on the server-side.
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+          </li>
+          <li>
+            <h3 class="title">Database Management</h3>
+            <span>
+              I learned about SQL database and how to design, query, and manage relational databases using SQLite.
+            </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">November 2022</span>
+      <div class="read-more-content">
+        <span>Then, I explored NoSQL database, specifically MongoDB, where I gained experience in working with flexible schemas and implementing CRUD operations.
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+          </li>
+          <li>
+            <h3 class="title">React</h3>
+            <span>
+              I started exploring React.js, a popular JavaScript library for building user interfaces. This journey has been an exciting experience.
+            </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">January 2023</span>
+      <div class="read-more-content">
+        <span>I learn to create interactive and dynamic web applications using React's component-based architecture. I look forward to mastering React.js and using it to build engaging and efficient web projects.
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+          </li>
+          <li>
+            <h3 class="title">App Development</h3>
+            <span>
+              I began exploring mobile app development with React Native and created cross-platform applications.
+            </span>
+      <a onclick="addContent(this)" class="addcontent">Read More</a>
+      <span class="circle"></span>
+      <span class="date">April 2023</span>
+      <div class="read-more-content">
+        <span>During this process, I also explored various native device functionalities and integrate Firebase database into my apps.
+        </span>
+      <a onclick="removeContent(this)">Read Less</a>
+      </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Timeline end -->
+
+    <!-- Project section start -->
+        <h1 class="phead">Projects</h1>
+  <section class="project" id="card">
+        <div class="container">
+        <div class="card">
+            <div class="content">
+                <img src="./images/iBallot.png" alt="iBallot">
+                <h3>iBallot</h3>
+                <p>An online voting application with Node.js app uses Passport.js for auth,
+sessions/cookies for login, Sqlite3 for data storage, EJS for UI, and SMTP for email
+notifications. A secure and efficient way for users to cast their votes</p>
+                <a href="https://iballot.onrender.com">Visit</a>
+                <a href="https://github.com/GauravPathak77/iBallot.github.io">Github</a>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="./images/dosewise.png" alt="DoseWise">
+                <h3>DoseWise</h3>
+                <p>A web app for medication management that facilitates Book medicines, setting dose
+reminders, and optimising stock effortlessly.
+</p>
+                <a href="https://dosewise.onrender.com">Visit</a>
+                <a href="https://github.com/DoseWise/Dosewise">Github</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="./images/weathertrack.png" alt="DoseWise">
+                <h3>WeatherTrack</h3>
+                <p>A Flask app that uses HTML, CSS, Python and an API to provide real-time weather information for a specific
+city, displaying current and forecasted weather</p>
+                <a href="">Visit</a>
+                <a href="https://github.com/GauravPathak77/WeatherTrack">Github</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2>04</h2>
+                <h3>TaskLister</h3>
+                <p>A ToDo List app using React Native and Firebase to create, view, manage tasks, and store
+data. A full-featured and powerful way to organize and track tasks.</p>
+                <a href="">Visit</a>
+                <a href="https://github.com/GauravPathak77/TaskLister">Github</a>
+            </div>
+        </div>
+    </div>
+  </section>
+    <!-- Project Section end -->
+
+    <!-- contact section start -->
+    <section id="contact">
+      <div class="contact_container">
+        <div class="text">Get In Touch</div>
+        <form action="mailto:gauravpathak182@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="input-data">
+              <input type="text" name="fname" id="fname" required />
+              <div class="underline"></div>
+              <label for="lname">First Name</label>
+            </div>
+            <div class="input-data">
+              <input type="text" name="lname" id="lname" required />
+              <div class="underline"></div>
+              <label for="lname">Last Name</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input-data">
+              <input type="email" name="email" id="email" required />
+              <div class="underline"></div>
+              <label for="email">Email Address</label>
+            </div>
+            <div class="input-data">
+              <input type="text" name="sub" id="sub" required />
+              <label for="sub">Subject</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input-data textarea">
+              <textarea
+                name="address"
+                id="address"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+              <div class="underline"></div>
+              <label for="">Message</label>
+            </div>
+          </div>
+          <div class="form-row submit-btn">
+            <div class="input-data">
+              <div class="inner"></div>
+              <input type="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Contact section end -->
+
+    <!-- Footer start -->
+    <section>
+      <footer>
+        <div class="row">
+          <div class="col">
+            <img src="logo.png" alt="logo" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
+              eum maiores. Molestias ut vitae inventore provident. Ut, odio
+              nemo. Repellat, illum autem! Mollitia iusto harum obcaecati
+              eligendi accusantium dignissimos
+            </p>
+          </div>
+          <div class="col">
+            <h3>
+              Links
+              <div class="underline"><span></span></div>
+            </h3>
+            <ul class="flinks">
+              <li><a href="">Home</a></li>
+              <li><a href="">Services</a></li>
+              <li><a href="">About US</a></li>
+              <li><a href="">Features</a></li>
+              <li><a href="">Contacts</a></li>
+            </ul>
+          </div>
+          <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="col">
+            <h3>
+              Newsletter
+              <div class="underline"><span></span></div>
+            </h3>
+            <form action="">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" placeholder="Enter your email id" required />
+              <button type="submit">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright © 2023 - All Rights Reserved</p>
+      </footer>
+    </section>
+    <!-- Footer end -->
+
+    <!-- Project section js start -->
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 1,
+      });
+    </script>
+    <!-- Project section js end -->
+
+    <script src="index.js"></script>
+  </body>
+</html>
