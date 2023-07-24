@@ -17,18 +17,28 @@ function removeContent(button){
   liElement.classList.remove("li-expanded");
 }
 
-const textToPrint = "GAURAV PATHAK";
-const interval = 1000; // 1000 milliseconds = 1 second
+// Hero section
+const textToPrint = "I AM GAURAV PATHAK";
+const interval = 500;
+const restartDelay = 1000;
 
-function printLetterByLetter() {
-  const h1Element = document.getElementById("value");
-  let currentText = h1Element.textContent;
-  const nextLetter = textToPrint[currentText.length];
+function printLetterByLetter(index) {
+  const h1Element = document.getElementById("myName");
+  const currentText = textToPrint.substring(0, index);
+  h1Element.textContent = currentText;
 
-  if (nextLetter) {
-    currentText += nextLetter;
-    h1Element.textContent = currentText;
-    setTimeout(printLetterByLetter, interval);
+  if (index < textToPrint.length) {
+    setTimeout(function () {
+      printLetterByLetter(index + 1);
+    }, interval);
+  } else {
+    
+    setTimeout(function () {
+      printLetterByLetter(0);
+    }, restartDelay);
   }
-  printLetterByLetter();
 }
+
+window.onload = function () {
+  printLetterByLetter(0);
+};

@@ -131,6 +131,19 @@
 .hero h1 {
     font-size: 32px;
     margin-bottom: 16px;
+    color: rgb(106, 6, 236);
+}
+
+.hero #myName{
+    font-size: 35px;
+    font-family: pop;
+    font-weight: 700;
+    background: #56D8E4;
+        background: linear-gradient(to right, #56D8E4 20%, #9F01EA 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    position: relative;
+    margin-bottom: 60px;
 }
 
 .hero p {
@@ -150,7 +163,7 @@
 }
 
 .hero .button:hover {
-    background: #555;
+    background:#56d8e4;
 }
 
 .hero .image {
@@ -207,7 +220,7 @@
 }
 
 .about .image img {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -487,7 +500,6 @@
         left: -30px;
         transform: translate(-50%, -50%);
     }
-
     .main .container ul li:nth-child(even) {
         transform: translateX(0);
     }
@@ -517,11 +529,13 @@
 }
 
 .phead {
+    width: 100%;
+    text-align: center;
     font-size: 27px;
     font-weight: 500;
     color: rgb(106, 6, 236);
     position: relative;
-    left: 50%;
+    /* left: 160px; */
     top: 5vw;
     /* margin-bottom: 860px; */
 }
@@ -531,7 +545,7 @@
     content: ' ';
     width: 15%;
     height: 4px;
-    left: 4%;
+    left: 50%;
     bottom: -5px;
     background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
     transform: translateX(-50%);
@@ -641,7 +655,7 @@
         content: ' ';
         width: 30%;
         height: 4px;
-        left: 8%;
+        left: 50%;
         bottom: -5px;
         background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
         transform: translateX(-50%);

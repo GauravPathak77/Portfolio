@@ -17,9 +17,9 @@
       /></a>
       <div class="nav-links">
         <a href=""></a>
-        <a href="#home">Home</a>
+        <a href="#myNavbar">Home</a>
         <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#card">Portfolio</a>
         <a href="#contact">Contact</a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -31,22 +31,23 @@
     <section class="hero">
       <div class="content">
         <h1>Welcome to my Website</h1>
-        <p id="value">
-        </p>
-        <a href="#" class="button">Resume</a>
+        <h1 id="myName"></h1>
+        <h1 id="value">
+        </h1>
+        <a href="https://drive.google.com/file/d/1Ml7Siy0WMDOwj_rsouwFuZ4iusM9hAif/view?usp=sharing" class="button">Resume</a>
       </div>
       <div class="image">
-        <img src="your-image.jpg" alt="Image" />
+          <img src="images/photo.jpg" alt="Image" />
       </div>
     </section>
     <!-- hero section end -->
 
     <!-- About section start -->
-    <section class="about">
+    <section id="about" class="about">
       <h2>About Us</h2>
       <div class="content">
         <div class="image">
-          <img src="your-image.jpg" alt="Image" />
+          <img src="images/photo.jpg" alt="Image" />
         </div>
         <p>
           Passionate developer with expertise in web and app development using React.js, Node.js, and React Native. Strong problem-solving skills with a background in Data Structures and Algorithms (DSA). Eager to collaborate and build innovative solutions. Let's connect and create something great together!
@@ -288,12 +289,12 @@ data. A full-featured and powerful way to organize and track tasks.</p>
       <footer>
         <div class="row">
           <div class="col">
-            <img src="logo.png" alt="logo" />
+            <!-- <img src="logo.png" alt="logo" /> -->
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-              eum maiores. Molestias ut vitae inventore provident. Ut, odio
-              nemo. Repellat, illum autem! Mollitia iusto harum obcaecati
-              eligendi accusantium dignissimos
+              I am passionate about coding and enjoy
+developing apps and solving problem
+statements to improve my skills and
+knowledge.
             </p>
           </div>
           <div class="col">
@@ -302,26 +303,25 @@ data. A full-featured and powerful way to organize and track tasks.</p>
               <div class="underline"><span></span></div>
             </h3>
             <ul class="flinks">
-              <li><a href="">Home</a></li>
-              <li><a href="">Services</a></li>
-              <li><a href="">About US</a></li>
-              <li><a href="">Features</a></li>
-              <li><a href="">Contacts</a></li>
+              <li><a href="#myNavbar">Home</a></li>
+              <li><a href="#about">About US</a></li>
+              <li><a href="#card">Projects</a></li>
+              <li><a href="#contact">Contacts</a></li>
             </ul>
           </div>
           <div class="social-icons">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-whatsapp"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-github"></i>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/gauravpathak77/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/GauravPathak77"><i class="fab fa-github"></i></a>
           </div>
           <div class="col">
             <h3>
               Newsletter
               <div class="underline"><span></span></div>
             </h3>
-            <form action="">
+            <form action="" method="POST">
               <i class="fa-solid fa-envelope"></i>
               <input type="email" placeholder="Enter your email id" required />
               <button type="submit">
