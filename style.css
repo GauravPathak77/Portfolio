@@ -131,7 +131,10 @@
 .hero h1 {
     font-size: 32px;
     margin-bottom: 16px;
-    color: rgb(106, 6, 236);
+    background: #121FCF;
+        background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 
 .hero #myName{
@@ -236,13 +239,13 @@
 }
 
 .about h2 {
-    /* font-size: 32px;
-    margin-bottom: 16px; */
-    font-size: 27px;
-    font-weight: 500;
+    font-size: 32px;
+    /* margin-bottom: 16px; */
+    font-weight: 600;
     color: rgb(106, 6, 236);
     position: relative;
     margin-bottom: 60px;
+    font-size: 27px;
 }
 
 .about h2::after {
@@ -391,7 +394,7 @@
     transform: translateX(30px);
 }
 
-.main .container ul li:nth-child(4) {
+.main .container ul li:nth-child(8) {
     margin-bottom: 0;
 }
 
