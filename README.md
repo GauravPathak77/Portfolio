@@ -17,6 +17,7 @@ Welcome to my personal portfolio website! This website serves as a showcase of m
 - Interactive Elements: Incorporated JavaScript to add interactivity and enhance user experience.
 ## Requirements
 - Web Browser (Google Chrome, Mozilla Firefox, Safari, etc.)
+- Internet Connection
 ## Tech Stack
 
 HTML5, CSS3, and JavaScript
