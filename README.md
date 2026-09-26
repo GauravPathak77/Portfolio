@@ -65,6 +65,20 @@ Requires **Node.js 22.13+** (for the built-in `node:sqlite` module).
 
    Site: `http://localhost:3000` · Dashboard: `http://localhost:3000/admin/login`
 
+### Moving local data to MongoDB
+
+`npm run migrate:mongo` copies everything from the local SQLite database (profile, projects,
+certificates, timeline, reviews, messages) into MongoDB. Collections that already contain data in
+MongoDB are skipped, so it is safe to re-run.
+
+### Troubleshooting: `querySrv ECONNREFUSED`
+
+`mongodb+srv://` strings need a DNS SRV lookup. If Node on your machine uses a DNS server that
+refuses it (check with `node -e "console.log(require('dns').getServers())"` — `127.0.0.1` is a
+common culprit, often from a VPN or DNS tool), use Atlas's standard connection string instead
+(Atlas → Connect → Drivers → choose an older driver version to see the `mongodb://host1,host2,host3/…`
+form). It connects without SRV and works everywhere, including Vercel.
+
 ## Deployment (Vercel)
 
 Use **MongoDB** in production. Vercel's filesystem is read-only and ephemeral, so SQLite writes

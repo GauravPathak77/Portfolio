@@ -22,13 +22,57 @@ const glows: Record<ProjectType, [string, string]> = {
   "Personal Project": ["from-[#3b82f6] to-[#56d8e4]", "from-[#6a06ec] to-[#3b82f6]"],
 };
 
+function frameLabel(project: ProjectData) {
+  if (project.liveUrl) {
+    try {
+      return new URL(project.liveUrl).hostname.replace(/^www\./, "");
+    } catch {
+      /* fall through to the title */
+    }
+  }
+  return project.title.split(" — ")[0];
+}
+
+function BrowserFrame({ project, large }: { project: ProjectData; large: boolean }) {
+  const [primaryGlow, secondaryGlow] = glows[project.projectType] ?? glows["Personal Project"];
+  return (
+    <div className="relative h-full w-full overflow-hidden bg-[#0d0b1f]">
+      <div className={clsx("absolute -left-10 -top-16 h-56 w-56 rounded-full bg-gradient-to-br opacity-60 blur-3xl", primaryGlow)} />
+      <div className={clsx("absolute -bottom-16 -right-10 h-56 w-56 rounded-full bg-gradient-to-br opacity-50 blur-3xl", secondaryGlow)} />
+      <div className="absolute inset-x-5 bottom-0 top-5 flex flex-col overflow-hidden rounded-t-lg shadow-2xl ring-1 ring-white/15 transition-transform duration-500 group-hover:-translate-y-1.5 sm:inset-x-7 sm:top-6">
+        <div className="flex h-6 shrink-0 items-center gap-1.5 bg-[#1b1830] px-3">
+          <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+          <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+          <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+          <span className="ml-2 truncate rounded bg-white/10 px-2 py-0.5 text-[10px] text-white/55">
+            {frameLabel(project)}
+          </span>
+        </div>
+        <div className="relative flex-1 bg-white">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes={large ? "(min-width: 1024px) 40vw, 100vw" : "(min-width: 768px) 50vw, 100vw"}
+            className="object-cover object-center"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ProjectThumbnail({
   project,
   large = false,
+  framed = false,
 }: {
   project: ProjectData;
   large?: boolean;
+  framed?: boolean;
 }) {
+  if (project.image && framed) return <BrowserFrame project={project} large={large} />;
+
   if (project.image) {
     return (
       <div className="relative h-full w-full">

@@ -16,6 +16,19 @@ const typeBadge: Record<ProjectType, string> = {
   "Personal Project": "bg-brand-purple/10 text-brand-deep ring-brand-purple/30 dark:text-violet-300",
 };
 
+const typeGlow: Record<ProjectType, string> = {
+  "Client Project": "rgba(86, 216, 228, 0.55)",
+  "Live Product": "rgba(16, 185, 129, 0.5)",
+  "AI Product": "rgba(240, 2, 127, 0.45)",
+  "Personal Project": "rgba(106, 6, 236, 0.5)",
+};
+
+const glowStyle = (type: ProjectType) =>
+  ({ "--glow": typeGlow[type] ?? typeGlow["Personal Project"] }) as React.CSSProperties;
+
+const cardHover =
+  "group transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_-22px_var(--glow)]";
+
 const reveal = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -103,10 +116,12 @@ function ArchitectureFlow({ steps }: { steps: string[] }) {
 function Thumbnail({
   project,
   large,
+  framed,
   onPreview,
 }: {
   project: ProjectData;
   large?: boolean;
+  framed?: boolean;
   onPreview: (image: LightboxImage) => void;
 }) {
   if (!project.image) return <ProjectThumbnail project={project} large={large} />;
@@ -119,7 +134,7 @@ function Thumbnail({
       aria-label={`View ${project.title} screenshot full size`}
       className="group relative block h-full w-full cursor-zoom-in"
     >
-      <ProjectThumbnail project={project} large={large} />
+      <ProjectThumbnail project={project} large={large} framed={framed} />
       <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full bg-black/60 px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
         <FiMaximize2 size={12} /> View
       </span>
@@ -224,10 +239,11 @@ export default function Projects({ projects }: { projects: ProjectData[] }) {
         <motion.article
           {...reveal}
           transition={{ duration: 0.5 }}
-          className="surface-card flex flex-col overflow-hidden ring-1 ring-brand-purple/20 lg:flex-row"
+          style={glowStyle(lead.projectType)}
+          className={clsx("surface-card flex flex-col overflow-hidden ring-1 ring-brand-purple/20 lg:flex-row", cardHover)}
         >
           <div className="relative h-60 w-full shrink-0 lg:h-auto lg:min-h-[420px] lg:w-[42%]">
-            <Thumbnail project={lead} large onPreview={setPreview} />
+            <Thumbnail project={lead} large framed onPreview={setPreview} />
           </div>
           <ProjectDetails project={lead} featured={hasFeatured} />
         </motion.article>
@@ -237,9 +253,12 @@ export default function Projects({ projects }: { projects: ProjectData[] }) {
             {others.map((project, idx) => (
               <motion.div key={project._id} {...reveal} transition={{ duration: 0.4, delay: (idx % 2) * 0.08 }}>
                 <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3} glareEnable glareMaxOpacity={0.08} className="h-full">
-                  <article className="surface-card flex h-full flex-col overflow-hidden">
+                  <article
+                    style={glowStyle(project.projectType)}
+                    className={clsx("surface-card flex h-full flex-col overflow-hidden", cardHover)}
+                  >
                     <div className="relative aspect-video w-full shrink-0 overflow-hidden">
-                      <Thumbnail project={project} onPreview={setPreview} />
+                      <Thumbnail project={project} framed onPreview={setPreview} />
                     </div>
                     <ProjectDetails project={project} />
                   </article>

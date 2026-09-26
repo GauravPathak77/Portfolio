@@ -7,7 +7,8 @@ import type {
   TimelineItemData,
 } from "@/lib/types";
 import Navbar, { type NavLink } from "@/components/site/Navbar";
-import Hero from "@/components/site/Hero";
+import Hero, { type HeroStat } from "@/components/site/Hero";
+import TechMarquee from "@/components/site/TechMarquee";
 import About from "@/components/site/About";
 import Timeline from "@/components/site/Timeline";
 import Projects from "@/components/site/Projects";
@@ -92,10 +93,20 @@ export default async function Home() {
     { href: "#contact", label: "Contact", show: true },
   ].filter((link) => link.show);
 
+  const years = timeline.map((t) => Number(t.date.match(/\d{4}/)?.[0])).filter(Boolean);
+  const featuredCount = projects.filter((p) => p.featured).length;
+  const stats: HeroStat[] = [
+    years.length ? { value: String(Math.min(...years)), label: "Building since" } : null,
+    featuredCount ? { value: String(featuredCount), label: "Featured projects" } : null,
+    { value: "3", label: "Client countries" },
+    certificates.length ? { value: String(certificates.length), label: "Certifications" } : null,
+  ].filter((stat): stat is HeroStat => stat !== null);
+
   return (
     <>
       <Navbar name={profile.name} links={navLinks} />
-      <Hero profile={profile} />
+      <Hero profile={profile} stats={stats} />
+      <TechMarquee />
       <About profile={profile} />
       <Projects projects={projects} />
       <Certificates certificates={certificates} />
