@@ -33,9 +33,21 @@ const config: Config = {
           "0%": { left: "-20px" },
           "100%": { left: "100%" },
         },
+        blob: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(40px, -30px) scale(1.08)" },
+          "66%": { transform: "translate(-30px, 25px) scale(0.95)" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         moving: "moving 2s linear infinite",
+        blob: "blob 18s ease-in-out infinite",
+        "blob-slow": "blob 26s ease-in-out infinite reverse",
+        marquee: "marquee 75s linear infinite",
       },
     },
   },

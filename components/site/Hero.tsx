@@ -7,11 +7,22 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 import { faceThumbnail } from "@/lib/cloudinary";
 import type { ProfileData } from "@/lib/types";
 
-export default function Hero({ profile }: { profile: ProfileData }) {
+export interface HeroStat {
+  value: string;
+  label: string;
+}
+
+export default function Hero({ profile, stats }: { profile: ProfileData; stats: HeroStat[] }) {
   const typed = useTypewriter(profile.name ? `I AM ${profile.name.toUpperCase()}` : "", 90, 1200);
 
   return (
     <section id="home" className="relative w-full overflow-hidden bg-gradient-brand">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute -left-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-[#56d8e4] opacity-50 blur-3xl motion-safe:animate-blob" />
+        <div className="absolute -right-24 top-10 h-[32rem] w-[32rem] rounded-full bg-[#f0027f] opacity-30 blur-3xl motion-safe:animate-blob-slow" />
+        <div className="absolute bottom-0 left-1/3 h-[24rem] w-[24rem] rounded-full bg-[#6a06ec] opacity-40 blur-3xl motion-safe:animate-blob" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]" />
+      </div>
       {/* Deepens the brand gradient slightly so white text stays readable over the cyan end. */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/25" aria-hidden="true" />
 
@@ -81,6 +92,17 @@ export default function Hero({ profile }: { profile: ProfileData }) {
                 Let&apos;s Talk
               </a>
             </div>
+
+            {stats.length > 0 && (
+              <dl className="mt-9 flex flex-wrap justify-center gap-x-8 gap-y-4 md:justify-start">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="flex flex-col-reverse text-center md:text-left">
+                    <dt className="text-xs font-medium uppercase tracking-wider text-white/75">{stat.label}</dt>
+                    <dd className="text-2xl font-bold text-white drop-shadow-sm">{stat.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
           </motion.div>
 
           {profile.heroImage && (

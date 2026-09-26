@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "seed": "tsx scripts/seed.ts"
+    "seed": "tsx scripts/seed.ts",
+    "migrate:mongo": "tsx scripts/migrate-sqlite-to-mongo.ts"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
