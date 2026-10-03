@@ -278,6 +278,27 @@ const projectSeeds = [
     imageFile: "",
     featured: true,
   },
+  {
+    title: "Royal Gusto — Tiffin Service E-commerce",
+    projectType: "Live Product",
+    icon: "cart",
+    tagline:
+      "A live e-commerce website for Royal Gusto Bake & Dine, Lucknow — customers browse breakfast, lunch and dinner tiffin packages and order them online.",
+    description: "",
+    role: "Built the website — Next.js front end, MongoDB and web hosting.",
+    highlights: [
+      "Breakfast, lunch and dinner meal packages with weekly and monthly plans.",
+      "Cart and order flow so customers can order meal plans online.",
+      "Responsive Next.js website backed by MongoDB.",
+      "Deployed and live at royalgusto.in.",
+    ],
+    architecture: ["Meal plans catalog", "Cart", "Orders", "MongoDB", "Web hosting"],
+    techStack: ["Next.js", "MongoDB", "E-commerce", "Web hosting"],
+    liveUrl: "https://royalgusto.in/",
+    githubUrl: "",
+    imageFile: "royalgusto.png",
+    featured: true,
+  },
 
   // Earlier projects — original content from the 2023 portfolio.
   {
@@ -462,12 +483,28 @@ const timelineSeeds = [
     date: "Aug 2026",
   },
   {
+    title: "Royal Gusto — Tiffin Service E-commerce",
+    shortDescription:
+      "Built royalgusto.in, a live e-commerce website for Royal Gusto Bake & Dine, Lucknow, where customers order breakfast, lunch and dinner tiffin packages online.",
+    fullDescription:
+      "Weekly and monthly meal plans with a cart and order flow, built with Next.js and MongoDB and deployed on web hosting.",
+    date: "Jun – Jul 2026",
+  },
+  {
     title: "J&M — Student Transportation & Safety Platform",
     shortDescription:
       "Worked on a real-world client platform connecting bus edge devices, camera-based boarding events, GPS tracking, backend data services, a React admin dashboard and a React Native parent app.",
     fullDescription:
       "When a camera on the bus detects a student boarding, attendance is marked automatically and updated in the database, while GPS tracks the bus route. The platform covers student and driver management, with in-app chat so parents can raise concerns.",
     date: "Mar – May 2026",
+  },
+  {
+    title: "Ranaksh — Mission Planning for Mantra Defense India",
+    shortDescription:
+      "Built Ranaksh, a defence planning web application for Mantra Defense India on a live CesiumJS map, with a Next.js front end, FastAPI, PostgreSQL and Docker.",
+    fullDescription:
+      "Planners draw lines, rectangles and other shapes, place 2D and 3D GLB symbols, set them in motion, and save the planned story to revisit and replay later.",
+    date: "Jan – Mar 2026",
   },
   {
     title: "Sahii.in — E-commerce Platform",

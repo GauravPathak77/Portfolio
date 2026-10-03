@@ -93,11 +93,15 @@ export default async function Home() {
     { href: "#contact", label: "Contact", show: true },
   ].filter((link) => link.show);
 
-  const featuredCount = projects.filter((p) => p.featured).length;
   const stats: HeroStat[] = [
     // First professional development work (UpSkillz internship, 2022).
     { value: "2022", label: "Building since" },
-    featuredCount ? { value: String(featuredCount), label: "Featured projects" } : null,
+    projects.length
+      ? {
+          value: projects.length >= 10 ? `${Math.floor(projects.length / 5) * 5}+` : String(projects.length),
+          label: "Featured projects",
+        }
+      : null,
     { value: "3", label: "Client countries" },
     certificates.length ? { value: String(certificates.length), label: "Certifications" } : null,
   ].filter((stat): stat is HeroStat => stat !== null);
