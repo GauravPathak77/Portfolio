@@ -275,7 +275,7 @@ const projectSeeds = [
     techStack: ["Full-stack", "E-commerce", "APIs", "Database", "Deployment"],
     liveUrl: "https://sahii.in",
     githubUrl: "",
-    imageFile: "",
+    imageFile: "sahii.png",
     featured: true,
   },
   {

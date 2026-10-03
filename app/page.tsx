@@ -102,7 +102,7 @@ export default async function Home() {
           label: "Featured projects",
         }
       : null,
-    { value: "3", label: "Client countries" },
+    { value: "India / US / Canada", label: "Client countries" },
     certificates.length ? { value: String(certificates.length), label: "Certifications" } : null,
   ].filter((stat): stat is HeroStat => stat !== null);
 
