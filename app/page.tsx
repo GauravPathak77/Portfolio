@@ -93,10 +93,10 @@ export default async function Home() {
     { href: "#contact", label: "Contact", show: true },
   ].filter((link) => link.show);
 
-  const years = timeline.map((t) => Number(t.date.match(/\d{4}/)?.[0])).filter(Boolean);
   const featuredCount = projects.filter((p) => p.featured).length;
   const stats: HeroStat[] = [
-    years.length ? { value: String(Math.min(...years)), label: "Building since" } : null,
+    // First professional development work (UpSkillz internship, 2022).
+    { value: "2022", label: "Building since" },
     featuredCount ? { value: String(featuredCount), label: "Featured projects" } : null,
     { value: "3", label: "Client countries" },
     certificates.length ? { value: String(certificates.length), label: "Certifications" } : null,

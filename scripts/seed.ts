@@ -141,6 +141,36 @@ const projectSeeds = [
     featured: true,
   },
   {
+    title: "Ranaksh — Mission Planning on Live Maps",
+    projectType: "Client Project",
+    icon: "code",
+    tagline:
+      "A defence planning web application for Mantra Defense India: plan operations on a live local/global map, animate 2D and 3D symbols, and save each plan as a story to revisit later.",
+    description:
+      "Built for defence planning on a live CesiumJS globe. Planners draw lines, rectangles and other shapes, place 2D and 3D GLB symbols, add motion to them, and save the planned story so it can be replayed and revisited.",
+    role: "Full-stack development — Next.js front end with CesiumJS, FastAPI backend, PostgreSQL and Docker.",
+    highlights: [
+      "Planning on a live local and global map built with CesiumJS.",
+      "Drawing tools for lines, rectangles and other shapes.",
+      "2D symbols and 3D GLB models that can be placed on the map and set in motion.",
+      "Planned stories are saved and can be revisited and replayed later.",
+      "Next.js front end and FastAPI backend with PostgreSQL, containerised with Docker.",
+    ],
+    architecture: [
+      "Next.js + CesiumJS map",
+      "Drawing & symbol tools",
+      "Motion & story timeline",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+    ],
+    techStack: ["Next.js", "CesiumJS", "FastAPI", "PostgreSQL", "Docker"],
+    liveUrl: "",
+    githubUrl: "",
+    imageFile: "ranaksh.webp",
+    featured: true,
+  },
+  {
     title: "HorseApp — AI / Analytics Platform",
     projectType: "Client Project",
     icon: "horse",
